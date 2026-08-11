@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Mudabbir | Personal Finance Dashboard</title> 
+</head>
+<body>
+
+    <nav>
+        <div class="logo-name flex align-center gap-12">
+            <div class="logo-image flex-center">
+                <img src="images/logo.png" alt="MH Logo" class="icon-symbol rounded-md">
+            </div>
+            <div class="logo-text-group flex-column">
+                <span class="logo_name font-bold text-primary">Muhammad</span>
+                <span class="logo_subtext text-xs text-sub font-normal">Smart Money Manager</span>
+            </div>
+        </div>
+
+        <div class="menu-items flex-column justify-between">
+            <ul class="nav-links flex-column gap-6">
+                <li class="active"><a href="#dashboard" class="flex align-center rounded-sm">
+                    <i class="fa-solid fa-house icon-symbol"></i>
+                    <span class="link-name font-medium">Dashboard</span>
+                </a></li>
+                <li><a href="#activities" class="flex align-center rounded-sm">
+                    <i class="fa-solid fa-receipt icon-symbol"></i>
+                    <span class="link-name font-medium">Transactions</span>
+                </a></li>
+                <li><a href="#bills" class="flex align-center rounded-sm">
+                    <i class="fa-solid fa-file-invoice-dollar icon-symbol"></i>
+                    <span class="link-name font-medium">Monthly Bills</span>
+                </a></li>
+                <li><a href="#budget" class="flex align-center rounded-sm">
+                    <i class="fa-solid fa-chart-pie icon-symbol"></i>
+                    <span class="link-name font-medium">Budgets</span>
+                </a></li>
+                <li><a href="#chart-section" class="flex align-center rounded-sm">
+                    <i class="fa-solid fa-chart-line icon-symbol"></i>
+                    <span class="link-name font-medium">Analytics</span>
+                </a></li>
+                <li><a href="#payment-methods" class="flex align-center rounded-sm">
+                    <i class="fa-solid fa-credit-card icon-symbol"></i>
+                    <span class="link-name font-medium">Cards & Methods</span>
+                </a></li>
+                <li><a href="#account-summary" class="flex align-center rounded-sm">
+                    <i class="fa-solid fa-building-columns icon-symbol"></i>
+                    <span class="link-name font-medium">Account Summary</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode flex-column">
+                <li><a href="#" class="flex align-center rounded-sm">
+                    <i class="fa-solid fa-right-from-bracket icon-symbol"></i>
+                    <span class="link-name font-medium">Logout</span>
+                </a></li>
+
+                <li class="mode flex align-center">
+                    <a href="#" class="flex align-center rounded-sm">
+                        <i class="fa-solid fa-moon icon-symbol"></i>
+                        <span class="link-name font-medium">Dark Mode</span>
+                    </a>
+                    <div id="dark-mode-toggle" class="mode-toggle flex-center">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top flex-between align-center">
+            <div id="sidebarToggleBtn" class="sidebar-toggle flex-center rounded-sm" title="Toggle Sidebar">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="search-box flex align-center">
+                <i class="fa-solid fa-magnifying-glass icon-symbol"></i>
+                <input type="text" placeholder="Search transactions, bills, or categories..." class="rounded-md text-md text-main">
+            </div>
+            
+            <div class="top-profile-area flex align-center gap-18">
+                <div class="notification-icon flex-center rounded-full bg-body icon-symbol" title="Upcoming Bill Alerts">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge flex-center rounded-full text-xs font-bold">3</span>
+                </div>
+                
+                <div class="profile-details flex align-center gap-10">
+                    <img src="images/profile.jpg" alt="Profile Picture" class="rounded-full icon-symbol">
+                    <div class="user-info flex-column">
+                        <span class="user-name font-semibold text-md text-main">Muhammad Hamdy</span>
+                        <span class="user-role text-xs text-sub">Hardworking Employee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dash-content" id="dashboard">
+
+            <div class="welcome-banner flex-between align-center gap-16 rounded-xl shadow-btn">
+                <div class="banner-text flex-column gap-6">
+                    <h2 class="font-semibold text-xl">Welcome back, Muhammad Hamdy! 👋</h2>
+                    <p class="text-base font-normal">Break the paycheck-to-paycheck cycle. Track every penny and take control of your financial freedom!</p>
+                </div>
+                <div class="banner-badge flex align-center gap-6 rounded-pill text-base font-medium">
+                    <i class="fa-solid fa-shield-halved icon-symbol"></i> On Track This Month
+                </div>
+            </div>
+
+            <div class="overview">
+                <div class="section-title flex align-center gap-10">
+                    <i class="fa-solid fa-gauge-high flex-center rounded-sm icon-symbol"></i>
+                    <span class="text font-semibold text-lg text-main">Financial Overview</span>
+                </div>
+
+                <div class="summary-cards-grid gap-20">
+                    <div class="card card-balance flex-column justify-between rounded-lg shadow-card hover-lift hover-shadow bg-panel">
+                        <div class="card-top flex-between align-center">
+                            <span class="card-label text-base font-medium text-sub">Current Balance</span>
+                            <div class="icon-box balance-icon flex-center rounded-md icon-symbol">
+                                <i class="fa-solid fa-wallet"></i>
+                            </div>
+                        </div>
+                        <div class="card-amount font-bold text-2xl text-main">$2,450.00</div>
+                        <div class="card-footer positive flex align-center gap-6 text-xs font-medium text-positive">
+                            <i class="fa-solid fa-arrow-trend-up icon-symbol"></i>
+                            <span>+5.4% from last week</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-income flex-column justify-between rounded-lg shadow-card hover-lift hover-shadow bg-panel">
+                        <div class="card-top flex-between align-center">
+                            <span class="card-label text-base font-medium text-sub">Monthly Income</span>
+                            <div class="icon-box income-icon flex-center rounded-md icon-symbol">
+                                <i class="fa-solid fa-circle-arrow-down"></i>
+                            </div>
+                        </div>
+                        <div class="card-amount font-bold text-2xl text-main">$4,500.00</div>
+                        <div class="card-footer neutral flex align-center gap-6 text-xs font-medium text-sub">
+                            <i class="fa-solid fa-circle-check icon-symbol"></i>
+                            <span>Salary deposited (1st of month)</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-expense flex-column justify-between rounded-lg shadow-card hover-lift hover-shadow bg-panel">
+                        <div class="card-top flex-between align-center">
+                            <span class="card-label text-base font-medium text-sub">Monthly Expenses</span>
+                            <div class="icon-box expense-icon flex-center rounded-md icon-symbol">
+                                <i class="fa-solid fa-circle-arrow-up"></i>
+                            </div>
+                        </div>
+                        <div class="card-amount font-bold text-2xl text-main">$2,050.00</div>
+                        <div class="card-footer positive flex align-center gap-6 text-xs font-medium text-positive">
+                            <i class="fa-solid fa-arrow-down-long icon-symbol"></i>
+                            <span>-12.5% spent vs last month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2-columns gap-20">
+
+                <div class="dashboard-box rounded-lg shadow-card bg-panel" id="chart-section">
+                    <div class="box-header flex-between align-center">
+                        <div class="box-title flex align-center gap-10">
+                            <i class="fa-solid fa-chart-column flex-center rounded-sm icon-symbol"></i>
+                            <span class="font-semibold text-lg text-main">Weekly Income vs Expenses</span>
+                        </div>
+                        <div class="chart-legend flex align-center gap-14 text-xs text-sub">
+                            <span class="legend-item flex align-center gap-6"><span class="color-dot income-color rounded-full"></span> Income</span>
+                            <span class="legend-item flex align-center gap-6"><span class="color-dot expense-color rounded-full"></span> Expenses</span>
+                        </div>
+                    </div>
+
+                    <p class="box-subtitle text-xs text-sub">Compare how much you earned vs spent each week of the month.</p>
+
+                    <div class="chart-container flex align-end">
+                        <div class="chart-bars-group flex-around align-end">
+
+                            <div class="bar-column flex-column align-center justify-end">
+                                <div class="bars-pair flex align-end justify-center gap-6">
+                                    <div class="bar bar-income hover-scale-xy" style="height: 90%;" title="Week 1 Income: $4,500"></div>
+                                    <div class="bar bar-expense hover-scale-xy" style="height: 65%;" title="Week 1 Expense: $1,300"></div>
+                                </div>
+                                <span class="bar-label text-xs font-medium text-sub">Week 1</span>
+                            </div>
+
+                            <div class="bar-column flex-column align-center justify-end">
+                                <div class="bars-pair flex align-end justify-center gap-6">
+                                    <div class="bar bar-income hover-scale-xy" style="height: 10%;" title="Week 2 Income: $0"></div>
+                                    <div class="bar bar-expense hover-scale-xy" style="height: 35%;" title="Week 2 Expense: $420"></div>
+                                </div>
+                                <span class="bar-label text-xs font-medium text-sub">Week 2</span>
+                            </div>
+
+                            <div class="bar-column flex-column align-center justify-end">
+                                <div class="bars-pair flex align-end justify-center gap-6">
+                                    <div class="bar bar-income hover-scale-xy" style="height: 10%;" title="Week 3 Income: $0"></div>
+                                    <div class="bar bar-expense hover-scale-xy" style="height: 25%;" title="Week 3 Expense: $210"></div>
+                                </div>
+                                <span class="bar-label text-xs font-medium text-sub">Week 3</span>
+                            </div>
+
+                            <div class="bar-column flex-column align-center justify-end">
+                                <div class="bars-pair flex align-end justify-center gap-6">
+                                    <div class="bar bar-income hover-scale-xy" style="height: 10%;" title="Week 4 Income: $0"></div>
+                                    <div class="bar bar-expense hover-scale-xy" style="height: 20%;" title="Week 4 Expense: $120"></div>
+                                </div>
+                                <span class="bar-label text-xs font-medium text-sub">Week 4</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-box rounded-lg shadow-card bg-panel" id="budget">
+                    <div class="box-header flex-between align-center">
+                        <div class="box-title flex align-center gap-10">
+                            <i class="fa-solid fa-chart-pie flex-center rounded-sm icon-symbol"></i>
+                            <span class="font-semibold text-lg text-main">Category Budgets</span>
+                        </div>
+                        <span class="badge badge-info rounded-pill text-xs font-semibold">August 2026</span>
+                    </div>
+                    <p class="box-subtitle text-xs text-sub">Monitor spending limits before money runs out on the 10th!</p>
+
+                    <div class="budget-list flex-column gap-16">
+                        <div class="budget-item flex-column gap-6">
+                            <div class="budget-info flex-between text-base font-medium">
+                                <span class="category-name flex align-center gap-6 text-main"><i class="fa-solid fa-utensils text-primary icon-symbol"></i> Food & Groceries</span>
+                                <span class="budget-status text-sub">$450 / $600</span>
+                            </div>
+                            <div class="progress-bar-bg rounded-pill bg-body">
+                                <div class="progress-fill fill-normal rounded-pill" style="width: 75%;"></div>
+                            </div>
+                            <div class="budget-meta flex-between text-xs text-sub">
+                                <span>75% used</span>
+                                <span class="remaining-text font-medium">$150 left</span>
+                            </div>
+                        </div>
+
+                        <div class="budget-item flex-column gap-6">
+                            <div class="budget-info flex-between text-base font-medium">
+                                <span class="category-name flex align-center gap-6 text-main"><i class="fa-solid fa-film text-primary icon-symbol"></i> Entertainment & Dining</span>
+                                <span class="budget-status text-sub">$280 / $300</span>
+                            </div>
+                            <div class="progress-bar-bg rounded-pill bg-body">
+                                <div class="progress-fill fill-warning rounded-pill" style="width: 93%;"></div>
+                            </div>
+                            <div class="budget-meta flex-between text-xs text-sub">
+                                <span class="warning-text text-warning font-semibold">93% used (Near Limit!)</span>
+                                <span class="remaining-text font-medium">$20 left</span>
+                            </div>
+                        </div>
+
+                        <div class="budget-item flex-column gap-6">
+                            <div class="budget-info flex-between text-base font-medium">
+                                <span class="category-name flex align-center gap-6 text-main"><i class="fa-solid fa-car text-primary icon-symbol"></i> Transportation & Fuel</span>
+                                <span class="budget-status text-sub">$180 / $250</span>
+                            </div>
+                            <div class="progress-bar-bg rounded-pill bg-body">
+                                <div class="progress-fill fill-normal rounded-pill" style="width: 72%;"></div>
+                            </div>
+                            <div class="budget-meta flex-between text-xs text-sub">
+                                <span>72% used</span>
+                                <span class="remaining-text font-medium">$70 left</span>
+                            </div>
+                        </div>
+
+                        <div class="budget-item flex-column gap-6">
+                            <div class="budget-info flex-between text-base font-medium">
+                                <span class="category-name flex align-center gap-6 text-main"><i class="fa-solid fa-bolt text-primary icon-symbol"></i> Utilities & Bills</span>
+                                <span class="budget-status text-sub">$320 / $350</span>
+                            </div>
+                            <div class="progress-bar-bg rounded-pill bg-body">
+                                <div class="progress-fill fill-normal rounded-pill" style="width: 91%;"></div>
+                            </div>
+                            <div class="budget-meta flex-between text-xs text-sub">
+                                <span>91% used</span>
+                                <span class="remaining-text font-medium">$30 left</span>
+                            </div>
+                        </div>
+
+                        <div class="budget-item flex-column gap-6">
+                            <div class="budget-info flex-between text-base font-medium">
+                                <span class="category-name flex align-center gap-6 text-main"><i class="fa-solid fa-piggy-bank text-primary icon-symbol"></i> Emergency Savings Target</span>
+                                <span class="budget-status text-sub">$600 / $800</span>
+                            </div>
+                            <div class="progress-bar-bg rounded-pill bg-body">
+                                <div class="progress-fill fill-success rounded-pill" style="width: 75%;"></div>
+                            </div>
+                            <div class="budget-meta flex-between text-xs text-sub">
+                                <span class="success-text text-positive font-semibold">75% saved</span>
+                                <span class="remaining-text font-medium">$200 to target</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-2-columns gap-20">
+
+                <div class="dashboard-box rounded-lg shadow-card bg-panel" id="activities">
+                    <div class="box-header flex-between align-center">
+                        <div class="box-title flex align-center gap-10">
+                            <i class="fa-solid fa-receipt flex-center rounded-sm icon-symbol"></i>
+                            <span class="font-semibold text-lg text-main">Recent Activities & Transactions</span>
+                        </div>
+                        <a href="#" class="view-all-link text-xs font-medium text-primary">View All</a>
+                    </div>
+                    <p class="box-subtitle text-xs text-sub">Detailed log of every penny spent or received.</p>
+
+                    <div class="transactions-list flex-column gap-12">
+                        <div class="transaction-item flex-between align-center rounded-md bg-body hover-lift">
+                            <div class="trans-icon food flex-center rounded-md icon-symbol"><i class="fa-solid fa-mug-hot"></i></div>
+                            <div class="trans-details flex-column">
+                                <span class="trans-title font-semibold text-base text-main">Coffee Shop</span>
+                                <span class="trans-date text-xs text-sub">Today, 09:30 AM • Credit Card</span>
+                            </div>
+                            <div class="trans-category text-xs rounded-sm text-sub bg-panel">Food & Drink</div>
+                            <div class="trans-amount negative font-semibold text-md text-negative">-$4.50</div>
+                        </div>
+
+                        <div class="transaction-item flex-between align-center rounded-md bg-body hover-lift">
+                            <div class="trans-icon salary flex-center rounded-md icon-symbol"><i class="fa-solid fa-money-bill-transfer"></i></div>
+                            <div class="trans-details flex-column">
+                                <span class="trans-title font-semibold text-base text-main">Monthly Salary</span>
+                                <span class="trans-date text-xs text-sub">Aug 01, 2026 • Direct Deposit</span>
+                            </div>
+                            <div class="trans-category text-xs rounded-sm text-sub bg-panel">Income</div>
+                            <div class="trans-amount positive font-semibold text-md text-positive">+$4,500.00</div>
+                        </div>
+
+                        <div class="transaction-item flex-between align-center rounded-md bg-body hover-lift">
+                            <div class="trans-icon grocery flex-center rounded-md icon-symbol"><i class="fa-solid fa-basket-shopping"></i></div>
+                            <div class="trans-details flex-column">
+                                <span class="trans-title font-semibold text-base text-main">Supermarket Groceries</span>
+                                <span class="trans-date text-xs text-sub">Aug 08, 2026 • Debit Card</span>
+                            </div>
+                            <div class="trans-category text-xs rounded-sm text-sub bg-panel">Groceries</div>
+                            <div class="trans-amount negative font-semibold text-md text-negative">-$125.30</div>
+                        </div>
+
+                        <div class="transaction-item flex-between align-center rounded-md bg-body hover-lift">
+                            <div class="trans-icon utility flex-center rounded-md icon-symbol"><i class="fa-solid fa-tv"></i></div>
+                            <div class="trans-details flex-column">
+                                <span class="trans-title font-semibold text-base text-main">Netflix Subscription</span>
+                                <span class="trans-date text-xs text-sub">Aug 05, 2026 • Credit Card</span>
+                            </div>
+                            <div class="trans-category text-xs rounded-sm text-sub bg-panel">Subscriptions</div>
+                            <div class="trans-amount negative font-semibold text-md text-negative">-$15.99</div>
+                        </div>
+
+                        <div class="transaction-item flex-between align-center rounded-md bg-body hover-lift">
+                            <div class="trans-icon transport flex-center rounded-md icon-symbol"><i class="fa-solid fa-gas-pump"></i></div>
+                            <div class="trans-details flex-column">
+                                <span class="trans-title font-semibold text-base text-main">Gas & Fuel Station</span>
+                                <span class="trans-date text-xs text-sub">Aug 07, 2026 • Cash</span>
+                            </div>
+                            <div class="trans-category text-xs rounded-sm text-sub bg-panel">Transport</div>
+                            <div class="trans-amount negative font-semibold text-md text-negative">-$45.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-box rounded-lg shadow-card bg-panel" id="bills">
+                    <div class="box-header flex-between align-center">
+                        <div class="box-title flex align-center gap-10">
+                            <i class="fa-solid fa-file-invoice-dollar flex-center rounded-sm icon-symbol"></i>
+                            <span class="font-semibold text-lg text-main">Upcoming Monthly Bills</span>
+                        </div>
+                        <span class="badge badge-alert rounded-pill text-xs font-semibold">4 Pending</span>
+                    </div>
+                    <p class="box-subtitle text-xs text-sub">Never miss a payment due date and avoid unnecessary late fees.</p>
+
+                    <div class="bills-grid gap-14">
+                        <div class="bill-card flex-column justify-between gap-12 rounded-lg bg-body hover-lift">
+                            <div class="bill-top flex-between align-start">
+                                <div class="bill-icon house flex-center rounded-sm icon-symbol"><i class="fa-solid fa-house"></i></div>
+                                <span class="status-tag status-pending rounded-pill text-xs font-semibold">Due in 5 Days</span>
+                            </div>
+                            <div class="bill-info flex-column gap-4">
+                                <span class="bill-name font-semibold text-base text-main">House Rent</span>
+                                <span class="bill-date text-xs text-sub"><i class="fa-regular fa-calendar-days icon-symbol"></i> Due: Aug 15, 2026</span>
+                            </div>
+                            <div class="bill-footer flex-between align-center">
+                                <span class="bill-amount font-bold text-md text-main">$1,200.00</span>
+                                <button class="pay-btn shadow-btn rounded-sm font-medium text-xs hover-scale-xy icon-symbol">Pay Now</button>
+                            </div>
+                        </div>
+
+                        <div class="bill-card flex-column justify-between gap-12 rounded-lg bg-body hover-lift">
+                            <div class="bill-top flex-between align-start">
+                                <div class="bill-icon water flex-center rounded-sm icon-symbol"><i class="fa-solid fa-droplet"></i></div>
+                                <span class="status-tag status-warning rounded-pill text-xs font-semibold">Due in 8 Days</span>
+                            </div>
+                            <div class="bill-info flex-column gap-4">
+                                <span class="bill-name font-semibold text-base text-main">Electricity & Water</span>
+                                <span class="bill-date text-xs text-sub"><i class="fa-regular fa-calendar-days icon-symbol"></i> Due: Aug 18, 2026</span>
+                            </div>
+                            <div class="bill-footer flex-between align-center">
+                                <span class="bill-amount font-bold text-md text-main">$110.50</span>
+                                <button class="pay-btn shadow-btn rounded-sm font-medium text-xs hover-scale-xy icon-symbol">Pay Now</button>
+                            </div>
+                        </div>
+
+                        <div class="bill-card flex-column justify-between gap-12 rounded-lg bg-body hover-lift">
+                            <div class="bill-top flex-between align-start">
+                                <div class="bill-icon wifi flex-center rounded-sm icon-symbol"><i class="fa-solid fa-wifi"></i></div>
+                                <span class="status-tag status-upcoming rounded-pill text-xs font-semibold">Due in 12 Days</span>
+                            </div>
+                            <div class="bill-info flex-column gap-4">
+                                <span class="bill-name font-semibold text-base text-main">High-Speed Internet</span>
+                                <span class="bill-date text-xs text-sub"><i class="fa-regular fa-calendar-days icon-symbol"></i> Due: Aug 22, 2026</span>
+                            </div>
+                            <div class="bill-footer flex-between align-center">
+                                <span class="bill-amount font-bold text-md text-main">$65.00</span>
+                                <button class="pay-btn shadow-btn rounded-sm font-medium text-xs hover-scale-xy icon-symbol">Pay Now</button>
+                            </div>
+                        </div>
+
+                        <div class="bill-card flex-column justify-between gap-12 rounded-lg bg-body hover-lift">
+                            <div class="bill-top flex-between align-start">
+                                <div class="bill-icon gym flex-center rounded-sm icon-symbol"><i class="fa-solid fa-dumbbell"></i></div>
+                                <span class="status-tag status-upcoming rounded-pill text-xs font-semibold">Due in 18 Days</span>
+                            </div>
+                            <div class="bill-info flex-column gap-4">
+                                <span class="bill-name font-semibold text-base text-main">Gym Membership</span>
+                                <span class="bill-date text-xs text-sub"><i class="fa-regular fa-calendar-days icon-symbol"></i> Due: Aug 28, 2026</span>
+                            </div>
+                            <div class="bill-footer flex-between align-center">
+                                <span class="bill-amount font-bold text-md text-main">$45.00</span>
+                                <button class="pay-btn shadow-btn rounded-sm font-medium text-xs hover-scale-xy icon-symbol">Pay Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-2-columns gap-20">
+
+                <div class="dashboard-box rounded-lg shadow-card bg-panel" id="payment-methods">
+                    <div class="box-header flex-between align-center">
+                        <div class="box-title flex align-center gap-10">
+                            <i class="fa-solid fa-credit-card flex-center rounded-sm icon-symbol"></i>
+                            <span class="font-semibold text-lg text-main">Payment Methods & Cards</span>
+                        </div>
+                        <button class="add-card-btn bg-primary-light text-primary rounded-sm text-xs font-semibold hover-scale-xy"><i class="fa-solid fa-plus icon-symbol"></i> Add Method</button>
+                    </div>
+                    <p class="box-subtitle text-xs text-sub">Manage cards, credit limits, and payment sources.</p>
+
+                    <div class="cards-flex-container flex-column gap-14">
+                        <div class="payment-card visa-card flex-column justify-between rounded-lg hover-lift hover-shadow">
+                            <div class="card-chip-row flex-between align-center">
+                                <span class="card-type-name text-xs font-medium">Primary Debit</span>
+                                <i class="fa-solid fa-microchip card-chip-icon icon-symbol"></i>
+                            </div>
+                            <div class="card-number font-semibold text-lg">**** **** **** 4829</div>
+                            <div class="card-details-row flex gap-20">
+                                <div>
+                                    <span class="card-detail-label text-xs">Card Holder</span>
+                                    <span class="card-detail-val text-xs font-medium">Muhammad Hamdy</span>
+                                </div>
+                                <div>
+                                    <span class="card-detail-label text-xs">Expires</span>
+                                    <span class="card-detail-val text-xs font-medium">12/28</span>
+                                </div>
+                            </div>
+                            <div class="card-bottom-balance flex-between align-center text-xs font-semibold">
+                                <span>Balance: $1,850.00</span>
+                                <span class="brand-text font-bold">VISA</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-card master-card flex-column justify-between rounded-lg hover-lift hover-shadow">
+                            <div class="card-chip-row flex-between align-center">
+                                <span class="card-type-name text-xs font-medium">Credit Card</span>
+                                <i class="fa-solid fa-microchip card-chip-icon icon-symbol"></i>
+                            </div>
+                            <div class="card-number font-semibold text-lg">**** **** **** 9102</div>
+                            <div class="card-details-row flex gap-20">
+                                <div>
+                                    <span class="card-detail-label text-xs">Limit Used</span>
+                                    <span class="card-detail-val text-xs font-medium">$600 / $3,000</span>
+                                </div>
+                                <div>
+                                    <span class="card-detail-label text-xs">Expires</span>
+                                    <span class="card-detail-val text-xs font-medium">09/27</span>
+                                </div>
+                            </div>
+                            <div class="card-bottom-balance flex-between align-center text-xs font-semibold">
+                                <span>Available: $2,400.00</span>
+                                <span class="brand-text font-bold">Mastercard</span>
+                            </div>
+                        </div>
+
+                        <div class="payment-card paypal-card flex-column justify-between rounded-lg hover-lift hover-shadow">
+                            <div class="card-chip-row flex-between align-center">
+                                <span class="card-type-name text-xs font-medium">Digital Wallet</span>
+                                <i class="fa-solid fa-wallet card-chip-icon icon-symbol"></i>
+                            </div>
+                            <div class="card-number font-semibold text-lg">muhammadha@yahoo.com</div>
+                            <div class="card-details-row flex gap-20">
+                                <div>
+                                    <span class="card-detail-label text-xs">Linked Bank</span>
+                                    <span class="card-detail-val text-xs font-medium">Chase Checking</span>
+                                </div>
+                                <div>
+                                    <span class="card-detail-label text-xs">Status</span>
+                                    <span class="card-detail-val text-xs font-medium">Verified</span>
+                                </div>
+                            </div>
+                            <div class="card-bottom-balance flex-between align-center text-xs font-semibold">
+                                <span>Balance: $200.00</span>
+                                <span class="brand-text font-bold">PayPal</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="dashboard-box rounded-lg shadow-card bg-panel" id="account-summary">
+                    <div class="box-header flex-between align-center">
+                        <div class="box-title flex align-center gap-10">
+                            <i class="fa-solid fa-building-columns flex-center rounded-sm icon-symbol"></i>
+                            <span class="font-semibold text-lg text-main">Account Summary</span>
+                        </div>
+                        <span class="badge badge-success rounded-pill text-xs font-semibold">Healthy Standing</span>
+                    </div>
+                    <p class="box-subtitle text-xs text-sub">Comprehensive financial breakdown of all your accounts.</p>
+
+                    <div class="account-summary-list flex-column gap-12">
+                        <div class="account-row flex align-center rounded-md bg-body">
+                            <div class="account-icon-box checking flex-center rounded-md icon-symbol">
+                                <i class="fa-solid fa-building-columns"></i>
+                            </div>
+                            <div class="account-info flex-column">
+                                <span class="account-name font-semibold text-base text-main">Main Checking Account</span>
+                                <span class="account-sub text-xs text-sub">Daily spending & bill auto-pay</span>
+                            </div>
+                            <div class="account-amount-group flex-column align-end">
+                                <span class="account-balance font-bold text-md text-main">$1,850.00</span>
+                                <span class="account-status active rounded-pill text-xs font-semibold">Active</span>
+                            </div>
+                        </div>
+
+                        <div class="account-row flex align-center rounded-md bg-body">
+                            <div class="account-icon-box savings flex-center rounded-md icon-symbol">
+                                <i class="fa-solid fa-piggy-bank"></i>
+                            </div>
+                            <div class="account-info flex-column">
+                                <span class="account-name font-semibold text-base text-main">Emergency Savings</span>
+                                <span class="account-sub text-xs text-sub">High-yield account (3.5% APY)</span>
+                            </div>
+                            <div class="account-amount-group flex-column align-end">
+                                <span class="account-balance font-bold text-md text-main">$4,500.00</span>
+                                <span class="account-status growing rounded-pill text-xs font-semibold">+3.5% APY</span>
+                            </div>
+                        </div>
+
+                        <div class="account-row flex align-center rounded-md bg-body">
+                            <div class="account-icon-box credit flex-center rounded-md icon-symbol">
+                                <i class="fa-solid fa-credit-card"></i>
+                            </div>
+                            <div class="account-info flex-column">
+                                <span class="account-name font-semibold text-base text-main">Credit Line Reserve</span>
+                                <span class="account-sub text-xs text-sub">$600 current balance used</span>
+                            </div>
+                            <div class="account-amount-group flex-column align-end">
+                                <span class="account-balance font-bold text-md text-main">$2,400.00</span>
+                                <span class="account-status limit rounded-pill text-xs font-semibold">Available</span>
+                            </div>
+                        </div>
+
+                        <div class="net-worth-card flex-between align-center rounded-lg shadow-btn hover-scale-xy">
+                            <div class="net-worth-info flex-column">
+                                <span class="net-worth-title font-semibold text-md">Total Net Worth</span>
+                                <span class="net-worth-sub text-xs">Checking + Savings - Credit Used</span>
+                            </div>
+                            <span class="net-worth-amount font-bold text-xl">$5,750.00</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</body>
+</html>
